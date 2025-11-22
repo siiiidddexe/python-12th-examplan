@@ -1,0 +1,15 @@
+1. Programming and computational thinking
+Introduction to programming: Basic Python syntax, data types, input/output, and comments.
+Operators: Arithmetic, relational, logical, assignment, and bitwise operators.
+Control structures: Conditional statements (if, if-elif-else) and loops (for, while).
+Data structures: Lists, tuples, sets, and dictionaries, including operations and methods.
+Functions: Defining, calling, and working with arguments and recursion. 
+2. Object-oriented programming (OOP)
+Classes and objects: Creating and using classes to model real-world objects.
+Inheritance: Creating new classes from existing ones. 
+3. File handling and exception handling
+File operations: Opening, reading, writing, and closing text files.
+Exception handling: Using try, except, finally to manage errors gracefully. 
+4. Libraries and modules
+Built-in modules: Importing and using Python's standard libraries.
+User-defined modules: Creating and organizing code into modules. 
