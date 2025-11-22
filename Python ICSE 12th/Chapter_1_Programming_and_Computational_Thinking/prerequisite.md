@@ -1,4 +1,4 @@
-# Prerequisites for Chapter 1: Programming and Computational Thinking
+# Day 0 1-2 Hrs Prerequisites for Chapter 1: Programming and Computational Thinking
 
 To successfully undertake this chapter, students should have:
 
