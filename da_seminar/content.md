@@ -258,15 +258,17 @@ A retail company's data shows declining sales. A data scientist identifies the p
 
 ## 5. Technical Demo & Workshop: Hands-On Data Analytics
 
-### Workshop Overview: Building an Analytics Pipeline with AI Tools
+### Workshop Overview: No-Code Analytics Pipeline with AI Prompt Engineering
 
-**Objective:** Create a complete data analytics workflow from raw data to actionable insights using modern AI-powered tools.
+**Objective:** Create a complete data analytics workflow from raw data to actionable insights using ZERO coding - only prompt engineering and no-code tools.
 
-**Tools in Action:**
-- Google Search Filters (Data Collection)
-- Gemini LLM (Data Transformation)
-- Claude AI (Dashboard Creation)
-- Critical Thinking Framework (Insight Derivation)
+**No-Code Tools Stack:**
+- Google Search Filters (Data Collection - No code required)
+- Gemini LLM via Prompts (Data Transformation - Pure prompt engineering)
+- Claude AI via Prompts (Dashboard Creation - Prompt-generated HTML)
+- AI-Assisted Critical Thinking (Insight Derivation through strategic prompts)
+
+**Philosophy:** If you can write a clear prompt, you can do analytics. No Python, SQL, or JavaScript knowledge required.
 
 ### 5.1 Phase 1: Data Scraping with Google Search Filters
 
@@ -295,116 +297,239 @@ A retail company's data shows declining sales. A data scientist identifies the p
 - Extract structured salary information
 - Save as `salary_data.csv`
 
-### 5.2 Phase 2: CSV to Google Sheets Using Gemini LLM
+### 5.2 Phase 2: CSV to Google Sheets Using Gemini LLM (Pure Prompt Engineering)
 
 **Why Google Sheets?**
 - Collaborative and cloud-based
 - Easy to share with stakeholders
-- Integrates with visualization tools
+- No coding required - all formula-based
 
-**Using Gemini AI for Data Transformation:**
+**Master Prompts for Data Transformation with Gemini:**
 
-**Step-by-Step Process:**
+**Step-by-Step Prompt Engineering Process:**
 
-1. **Upload CSV to Gemini**
+1. **Upload CSV to Gemini + Data Cleaning Prompt**
    ```
-   Prompt: "I have a CSV file with columns: Name, Role, Salary, Experience. 
-   Please help me clean this data and create a Google Sheets formula 
-   to calculate average salary by experience level."
-   ```
-
-2. **Data Cleaning with AI**
-   - Remove duplicates
-   - Handle missing values
-   - Standardize formats (dates, currencies)
-   - Detect and flag anomalies
-
-3. **Generate Google Sheets Formulas**
-   ```
-   Gemini Output:
-   =AVERAGEIF(D:D, ">5", C:C)  // Avg salary for 5+ years experience
-   =COUNTIF(B:B, "Data Analyst")  // Count of data analysts
-   =VLOOKUP(A2, SalaryTable, 3, FALSE)  // Lookup salary by name
+   PROMPT TEMPLATE:
+   "I've uploaded a CSV file with columns: [list columns]. 
+   Please:
+   1. Identify any data quality issues (duplicates, missing values, inconsistencies)
+   2. Suggest cleaning steps
+   3. Create Google Sheets formulas to clean this data automatically
+   4. Explain what each formula does in simple business terms
+   
+   Format your response as: Issue → Formula → Business Impact"
    ```
 
-4. **Create Pivot Tables**
-   - Gemini can generate pivot table configurations
-   - Automatic summarization by categories
-   - Dynamic filtering and grouping
+   **Example for Salary Data:**
+   ```
+   Prompt: "I have a CSV with Name, Role, Salary, Experience columns. 
+   Some salaries have currency symbols, some don't. Some experience 
+   values say 'years' after the number. Please give me Google Sheets 
+   formulas to standardize everything."
+   
+   Gemini Response (No Code from You):
+   - Use =VALUE(REGEXREPLACE(B2,"[^0-9.]","")) to extract numbers from salary
+   - Use =REGEXEXTRACT(D2,"\d+") to get experience years
+   - Copy-paste these formulas - no coding needed!
+   ```
 
-**Real-World Application:**
-Imagine you're analyzing our seminar registration data (44 students):
-- Gemini can calculate average ratings by year (First vs Second)
-- Identify correlation between Excel knowledge and prior experience
-- Generate insights: "Students with prior experience have 40% higher statistical confidence"
+2. **Analysis Prompts - Let AI Do the Math**
+   ```
+   PROMPT: "Create Google Sheets formulas for these business questions:
+   - What's the average salary by experience level (0-2, 3-5, 6+ years)?
+   - Which role has the highest median salary?
+   - How many data analysts vs business analysts do we have?
+   - Show correlation between experience and salary
+   
+   Give me ready-to-use formulas I can copy-paste."
+   ```
 
-### 5.3 Phase 3: Dashboard Creation with Claude AI
+3. **Pivot Table Creation Through Prompts**
+   ```
+   PROMPT: "Guide me step-by-step to create a pivot table in Google Sheets 
+   that shows:
+   - Rows: Job Roles
+   - Values: Average Salary, Count of People
+   - Filter: Experience > 3 years
+   
+   Explain like I've never used pivot tables before. Include screenshots 
+   descriptions of what to click."
+   ```
 
-**Goal:** Transform Google Sheets data into an interactive HTML dashboard
+4. **Advanced Analysis Without Coding**
+   ```
+   PROMPT: "Using only Google Sheets built-in functions (no scripts), 
+   create formulas to:
+   - Segment employees into salary quartiles
+   - Calculate year-over-year salary growth
+   - Identify outliers (salaries >2 standard deviations from mean)
+   - Create a dynamic dropdown filter
+   
+   Provide copy-paste formulas with explanations."
+   ```
 
-**Why HTML Dashboards?**
-- No additional software required
-- Shareable via web link
-- Interactive visualizations using JavaScript libraries
+**Real-World Application for Our Seminar Data:**
+
+**Prompt Used:**
+```
+"I have registration data for 44 MBA students with fields: name, year, 
+prior experience, interest area, ratings (1-5 scale). Using Google Sheets 
+formulas only, help me:
+1. Calculate average rating by year (First vs Second)
+2. Find correlation between Excel knowledge and prior experience
+3. Identify top 3 interest areas
+4. Segment students into experience levels
+
+Provide all formulas ready to copy-paste."
+```
+
+**Gemini Output (You Just Copy-Paste):**
+- `=AVERAGEIF(B:B,"First Year",F:F)` for first-year average
+- `=CORREL(E:E,F:F)` for correlation (returns 0.65 - strong correlation!)
+- `=COUNTIF(D:D,"Business Intelligence")` shows 22 students (50%)
+
+**No coding by you - just smart prompting!**
+
+### 5.3 Phase 3: Dashboard Creation with Claude AI (Advanced Prompt Engineering)
+
+**Goal:** Transform Google Sheets data into an interactive HTML dashboard WITHOUT writing a single line of code yourself
+
+**Why Prompt-Generated HTML Dashboards?**
+- You don't write code - AI does it for you via prompts
+- Shareable via web link (host on GitHub Pages for free)
 - Professional presentation for stakeholders
+- Fully customizable through natural language instructions
 
-**Using Claude for Dashboard Generation:**
+**Master Prompt Engineering Techniques for Dashboard Creation:**
 
-**Step-by-Step Process:**
+**Step 1: The Perfect Dashboard Generation Prompt**
 
-1. **Share Data Context with Claude**
-   ```
-   Prompt: "I have registration data for an MBA analytics seminar with 
-   44 students. Data includes: year, prior experience, interest areas, 
-   and ratings. Please create an interactive HTML dashboard with 
-   charts showing:
-   - Total registrations breakdown
-   - Experience level distribution
-   - Interest areas (bar chart)
-   - Learning mode preferences
-   - Average ratings visualization"
-   ```
+```
+ULTIMATE DASHBOARD PROMPT TEMPLATE:
 
-2. **Claude Generates HTML/CSS/JavaScript**
-   - Uses Chart.js or D3.js for visualizations
-   - Responsive design for mobile/desktop
-   - Color-coded insights
-   - Interactive tooltips and filters
+"Create a professional, interactive HTML dashboard for [your use case].
 
-3. **Dashboard Features**
-   ```html
-   <!DOCTYPE html>
-   <html>
-   <head>
-       <title>MBA Analytics Seminar Dashboard</title>
-       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-       <style>
-           /* Modern, professional styling */
-           .dashboard { display: grid; grid-template-columns: repeat(2, 1fr); }
-           .metric-card { background: #f5f5f5; padding: 20px; border-radius: 8px; }
-       </style>
-   </head>
-   <body>
-       <h1>Seminar Analytics Dashboard</h1>
-       <div class="dashboard">
-           <canvas id="experienceChart"></canvas>
-           <canvas id="interestChart"></canvas>
-       </div>
-       <script>
-           // Claude generates complete JavaScript for data visualization
-           const data = { /* Registration data */ };
-           // Chart configurations and rendering logic
-       </script>
-   </body>
-   </html>
-   ```
+DATA CONTEXT:
+- Dataset: [describe your data]
+- Key metrics: [list 3-5 important numbers]
+- Audience: [who will view this]
 
-4. **Preview and Iterate**
-   - Open HTML file in browser
-   - Request modifications from Claude
-   - "Make the bar chart horizontal"
-   - "Add a filter for First Year students only"
-   - "Change color scheme to blue gradient"
+VISUALIZATIONS NEEDED:
+1. [Chart type] showing [what data]
+2. [Chart type] showing [what data]
+3. [Chart type] showing [what data]
+4. Key metric cards at the top showing [metrics]
+
+DESIGN REQUIREMENTS:
+- Color scheme: [corporate blue / modern gradient / minimal]
+- Layout: [single page / multi-section / tabbed]
+- Interactive features: [filters, tooltips, drill-downs]
+- Mobile responsive: Yes
+
+TECHNICAL CONSTRAINTS:
+- Single HTML file (no external dependencies except CDN libraries)
+- Use Chart.js for visualizations
+- Include sample data embedded in the file
+- Add comments explaining each section
+
+OUTPUT FORMAT:
+Provide complete, copy-paste-ready HTML code with:
+1. Inline CSS for styling
+2. Embedded data
+3. Chart.js for visualizations
+4. Comments explaining what each part does
+
+Make it look professional enough to show in a business presentation."
+```
+
+**Step 2: Our Seminar Dashboard - Exact Prompt Used**
+
+```
+ACTUAL PROMPT:
+
+"Create an interactive HTML dashboard for an MBA Data Analytics Seminar.
+
+DATA:
+- 44 total registrations (22 First Year, 22 Second Year)
+- Prior experience: 7% extensive, 41% basics, 30% interested, 23% none
+- Top interests: Business Intelligence (50%), Data Visualization (32%), 
+  Machine Learning (9%), Predictive Analytics (9%)
+- Learning preference: Hands-on (57%), Mixed (32%), Case studies (7%), Theory (5%)
+- Average ratings: Career interest 4.59/5, Excel knowledge 3.27/5, 
+  Statistical confidence 3.3/5, Recommendation likelihood 4.23/5
+
+VISUALIZATIONS:
+1. KPI Cards: Total registrations, Year split, Top interest, Preferred mode
+2. Donut chart: Experience level distribution
+3. Horizontal bar chart: Interest areas
+4. Radar chart: Average skill/interest ratings
+5. Stacked bar: Learning mode by year
+
+DESIGN:
+- Professional blue gradient theme (#1e3a8a to #3b82f6)
+- Clean, modern cards with shadows
+- Interactive tooltips on hover
+- Mobile responsive grid layout
+
+DELIVER: Single HTML file, copy-paste ready, with embedded data."
+```
+
+**Step 3: Claude Generates Complete Code (You Write ZERO Code)**
+
+Claude will generate a complete HTML file with:
+- ✅ All CSS styling (you don't write any)
+- ✅ All JavaScript for charts (you don't write any)
+- ✅ Data embedded in the file
+- ✅ Responsive design
+- ✅ Professional appearance
+
+**You simply:** Copy → Paste into a file → Save as `dashboard.html` → Open in browser
+
+**Step 4: Iteration Through Prompts (No Code Editing)**
+
+Instead of editing code, you refine through prompts:
+
+```
+REFINEMENT PROMPTS:
+
+"Make the bar chart horizontal instead of vertical"
+→ Claude updates the code
+
+"Change color scheme to green gradient (#065f46 to #10b981)"
+→ Claude updates all color values
+
+"Add a dropdown filter to show only First Year or Second Year students"
+→ Claude adds interactive filter with JavaScript
+
+"Make the KPI cards animate when page loads"
+→ Claude adds CSS animations
+
+"Add an export to PDF button"
+→ Claude adds html2pdf.js integration
+
+"The font is too small on mobile, fix it"
+→ Claude adjusts responsive breakpoints
+```
+
+**Step 5: Advanced No-Code Dashboard Features**
+
+```
+PROMPT FOR ADVANCED FEATURES:
+
+"Enhance this dashboard with:
+1. Search bar to filter by student name
+2. Date range selector (if time-series data)
+3. Comparison mode: Side-by-side view of two metrics
+4. Dark mode toggle switch
+5. Share button (copy dashboard link)
+6. Print-friendly CSS
+
+Implement all features using vanilla JavaScript (no frameworks).
+Provide updated HTML file."
+```
+
+Claude implements everything - you remain code-free!
 
 **Example Output for Our Seminar Data:**
 
@@ -420,25 +545,85 @@ Imagine you're analyzing our seminar registration data (44 students):
 3. **Gauge Chart:** Average career interest (4.59/5)
 4. **Heatmap:** Correlation between Excel knowledge and statistical confidence
 
-### 5.4 Phase 4: Deriving Insights - Critical & Logical Thinking
+### 5.4 Phase 4: Deriving Insights Through AI-Assisted Critical Thinking (Prompt Engineering)
 
-**The Most Important Phase: Turning Data into Action**
+**The Most Important Phase: Turning Data into Action Using AI as Your Thinking Partner**
 
-**Framework for Insight Derivation:**
+**Prompt Engineering Framework for Insight Derivation:**
 
-#### Step 1: Observe Patterns
-**From our seminar data:**
-- **Observation 1:** 41% have basic experience, but only 7% have extensive experience
-- **Observation 2:** Business Intelligence interest (50%) far exceeds Machine Learning (9%)
-- **Observation 3:** Average Excel knowledge (3.27/5) matches statistical confidence (3.3/5)
-- **Observation 4:** Second-year students show slightly higher tool proficiency
+#### Step 1: Pattern Discovery Prompts
 
-#### Step 2: Ask "Why?"
-**Logical Reasoning:**
-- **Why low ML interest?** → Perception that ML requires strong technical background
-- **Why high BI interest?** → Direct relevance to MBA career paths (consulting, strategy)
-- **Why Excel/stats correlation?** → Excel is the primary tool students use for statistics
-- **Why second-year advantage?** → Exposure to analytics in coursework over the year
+**Instead of manually analyzing, prompt AI to find patterns:**
+
+```
+PATTERN DISCOVERY PROMPT:
+
+"Analyze this seminar registration data:
+- 44 students: 22 First Year, 22 Second Year
+- Experience: 7% extensive, 41% basics, 30% interested, 23% none
+- Interest: BI (50%), Data Viz (32%), ML (9%), Predictive (9%)
+- Skills: Excel 3.27/5, Statistical confidence 3.3/5
+- Preferences: Hands-on (57%), Mixed (32%)
+
+Identify:
+1. Top 5 patterns or correlations
+2. Any surprising findings
+3. Segments within the data
+4. Gaps or opportunities
+
+Present as: Pattern → Evidence → Business Significance"
+```
+
+**AI Output (From our data):**
+- **Pattern 1:** Excel knowledge perfectly correlates with statistical confidence (both 3.3/5) 
+  → Evidence: Students learn stats through Excel 
+  → Significance: Teaching advanced Excel = improving statistical capability
+
+- **Pattern 2:** Equal first/second year split BUT second-years rate higher 
+  → Evidence: Year 2 avg ratings 0.3 points higher 
+  → Significance: One year of MBA increases analytics awareness
+
+- **Pattern 3:** High BI interest (50%) vs low ML interest (9%) despite industry buzz 
+  → Evidence: 5.5x more students choose BI over ML 
+  → Significance: Students perceive ML as too technical/less relevant to MBA careers
+
+#### Step 2: "Why?" Analysis Through Prompts
+
+**Let AI do the logical reasoning:**
+
+```
+CAUSAL ANALYSIS PROMPT:
+
+"Given these patterns from MBA student data:
+1. Low ML interest (9%) despite industry hype
+2. High BI interest (50%)
+3. Strong preference for hands-on learning (57%)
+4. Excel/stats skills correlation
+
+For each pattern, provide:
+- 3 possible root causes (ranked by likelihood)
+- Supporting reasoning
+- Counterarguments to test the hypothesis
+- How to validate with additional data
+
+Think like a business strategist, not a data scientist."
+```
+
+**AI-Generated Reasoning:**
+
+**Why low ML interest?**
+1. **Root Cause 1 (80% likely):** Perception barrier - ML seen as "coding-heavy" 
+   - Reasoning: MBA students associate ML with Python, algorithms, math PhD 
+   - Counter: Many no-code ML tools exist (obviously.ai, teachable machine) 
+   - Validation: Survey asking "Why not interested in ML?"
+
+2. **Root Cause 2 (15% likely):** Unclear career path 
+   - Reasoning: BI roles clearly defined (analyst, consultant), ML roles fuzzy 
+   - Validation: Track job postings for "ML" in MBA-relevant roles
+
+3. **Root Cause 3 (5% likely):** Curriculum hasn't covered it yet 
+   - Reasoning: ML might be in later semesters 
+   - Validation: Check semester syllabus
 
 #### Step 3: Identify Implications
 **Critical Thinking:**
@@ -612,33 +797,124 @@ Imagine you're analyzing our seminar registration data (44 students):
 - **Agriculture:** Crop yield prediction, precision farming
 - **Logistics:** Fleet management, route optimization
 
-### 6.3 Skills to Develop (2025-2027 Roadmap)
+### 6.3 Skills to Develop (2025-2027 Roadmap) - The No-Code Path
 
-**For MBA Students - 3-Month Sprint:**
+**For MBA Students - 3-Month No-Code Sprint:**
 
-**Month 1: Foundations**
-- ✅ Excel advanced (pivot tables, advanced formulas, Power Query)
-- ✅ SQL basics (SELECT, JOIN, WHERE, GROUP BY)
-- ✅ Statistics refresher (mean, median, correlation, hypothesis testing)
-- ✅ **Project:** Analyze 6 months of sales data, present insights
+**Month 1: No-Code Foundations + Prompt Engineering Mastery**
+- ✅ Excel advanced (pivot tables, Power Query - all point-and-click)
+- ✅ Prompt engineering fundamentals (how to get AI to do analysis for you)
+- ✅ Google Sheets advanced formulas (AI generates them, you understand them)
+- ✅ Statistics through AI (ask ChatGPT/Claude to explain concepts with examples)
+- ✅ **Project:** Use AI prompts to analyze 6 months of sales data, create insights report
 
-**Month 2: Visualization & Tools**
-- ✅ Power BI or Tableau (choose one)
-- ✅ Google Analytics fundamentals
-- ✅ Basic Python for data (Pandas, data cleaning)
-- ✅ **Project:** Build interactive dashboard for business case
+**Prompt Engineering Skill Building:**
+```
+Week 1: Master basic prompts
+- "Explain [concept] like I'm an MBA student"
+- "Analyze this data and find top 3 insights: [paste data]"
+- "Create Excel formulas for [specific calculation]"
 
-**Month 3: Applied Analytics**
-- ✅ A/B testing and experimentation
-- ✅ Customer segmentation (RFM analysis)
-- ✅ Financial modeling with analytics
-- ✅ **Project:** Full analytics case study for job interviews
+Week 2: Advanced analytical prompts
+- "Act as a data analyst. Given [data], perform segmentation analysis"
+- "What questions should I ask about this business data?"
+- "Compare these two datasets and identify key differences"
 
-**Long-Term (1-2 Years):**
-- Machine Learning basics (classification, regression)
-- Cloud platforms (AWS/Azure/GCP fundamentals)
-- Data storytelling and presentation skills
-- Domain expertise in chosen industry
+Week 3: Creative problem-solving prompts
+- "I have [business problem]. Design an analytics approach using only no-code tools"
+- "What data would I need to answer [business question]?"
+
+Week 4: Execution prompts
+- "Create a step-by-step guide to [analytics task] using Google Sheets"
+- "Generate a presentation outline explaining [insight] to executives"
+```
+
+**Month 2: No-Code Visualization & Business Intelligence**
+- ✅ Power BI (drag-and-drop, zero coding)
+- ✅ Tableau Public (visual analytics, no programming)
+- ✅ Google Looker Studio (free, no-code dashboards)
+- ✅ **AI Copilot:** Use ChatGPT to explain every feature as you learn
+- ✅ **Project:** Build 3 dashboards using only visual interfaces + AI guidance
+
+**No-Code BI Workflow:**
+```
+1. Connect data (click "Import CSV" or "Connect to Google Sheets")
+2. Ask AI: "What visualizations best show [your business question]?"
+3. Drag and drop fields into chart builder
+4. Ask AI: "How do I add a filter for [dimension]?"
+5. Follow AI instructions (no code required)
+6. Ask AI: "Review my dashboard and suggest improvements"
+```
+
+**Month 3: Applied No-Code Analytics + AI-Powered Insights**
+- ✅ A/B testing with Google Optimize (no-code setup)
+- ✅ Customer segmentation using AI prompts ("Segment these customers into 4 groups")
+- ✅ Financial modeling in Excel + AI formula generation
+- ✅ Automated reporting with Zapier/Make (no-code automation)
+- ✅ **Project:** Complete case study using only no-code tools + AI assistance
+
+**No-Code Analytics Toolkit:**
+- **Data Collection:** Google Forms, Typeform, Airtable
+- **Data Processing:** Google Sheets + AI-generated formulas
+- **Visualization:** Power BI, Tableau, Looker Studio
+- **Automation:** Zapier, Make, IFTTT
+- **AI Assistants:** ChatGPT, Claude, Gemini (for everything!)
+- **Presentation:** Canva (AI-designed slides), Gamma.app (AI presentations)
+
+**Long-Term (1-2 Years) - Advanced No-Code:**
+- **No-Code Machine Learning:** Obviously.ai, MonkeyLearn, Levity.ai
+- **No-Code Web Apps:** Bubble.io, Webflow (build analytics tools without code)
+- **Advanced Prompt Engineering:** Master chain-of-thought prompting, few-shot learning
+- **AI-Powered Business Analysis:** Use AI to analyze entire market reports
+- **Data storytelling:** Combine AI insights with Canva/Gamma for compelling narratives
+
+**Critical Skill: Prompt Engineering Mastery**
+
+By 2027, the most valuable skill will be **knowing what to ask AI**, not how to code.
+
+**Prompt Engineering Levels:**
+
+**Level 1 - Basic (Week 1-4):**
+```
+"Analyze this data"
+"Create a chart"
+```
+
+**Level 2 - Intermediate (Month 2-3):**
+```
+"Act as a senior business analyst. Analyze this sales data focusing on 
+regional trends, customer segments, and seasonal patterns. Provide 3 
+actionable recommendations with ROI estimates."
+```
+
+**Level 3 - Advanced (Month 6-12):**
+```
+"Context: I'm presenting to the CFO of a retail company facing declining margins.
+
+Data: Q1-Q4 sales, costs, customer acquisition data (attached)
+
+Task: 
+1. Perform cohort analysis to identify most profitable customer segments
+2. Calculate unit economics (CAC, LTV, payback period) by segment
+3. Build a scenario model: What if we increase prices 5% or cut CAC by 20%?
+4. Create an executive summary with 3 strategic recommendations
+5. Generate PowerPoint-ready slides explaining your analysis
+
+Output format: Executive summary, detailed analysis, actionable insights, slide outlines
+
+Tone: Data-driven but accessible to non-technical executives"
+```
+
+**The MBA Advantage in the AI Era:**
+
+You don't need to code. You need to:
+1. **Ask the right business questions** (MBA strength)
+2. **Prompt AI effectively** (learnable in weeks)
+3. **Interpret results in business context** (MBA training)
+4. **Communicate insights to stakeholders** (MBA core skill)
+5. **Make strategic decisions** (MBA purpose)
+
+**This is the future: Business acumen + Prompt engineering > Coding skills**
 
 ### 6.4 Ethical Considerations & Responsible Analytics
 
@@ -806,39 +1082,348 @@ Remember:
 
 ---
 
-## Appendix: Technical Reference
+## Appendix: No-Code Toolkit & Prompt Library
 
-### A. Google Search Operators for Data Collection
+### A. Google Search Operators for No-Code Data Collection
 
+**Copy-Paste Ready Search Queries:**
 ```
-site:          Search within specific domain
-filetype:      Find specific file types (csv, xlsx, pdf)
-inurl:         Search in URL
-intitle:       Search in page title
-..             Number range (2020..2025)
-OR             Logical OR operator
--              Exclude term
-" "            Exact match phrase
-```
+site:linkedin.com "data analyst" "salary" filetype:pdf
+→ Find salary reports on LinkedIn
 
-### B. Gemini Prompts for Data Analysis
+site:gov OR site:edu "business statistics" filetype:csv 2024..2025
+→ Find government/education datasets from 2024-2025
 
-```
-"Analyze this CSV and identify top 3 insights"
-"Clean this dataset: remove duplicates, handle missing values"
-"Generate Google Sheets formula for [specific calculation]"
-"Create pivot table structure for [specific analysis]"
-"Explain statistical significance of [finding]"
+inurl:data "quarterly report" filetype:xlsx ("revenue" OR "sales")
+→ Find Excel financial reports
+
+site:kaggle.com "retail" OR "e-commerce" dataset
+→ Find practice datasets on Kaggle
+
+"market research" -site:pinterest.com -site:instagram.com filetype:pdf
+→ Find market research excluding social media
 ```
 
-### C. Claude Prompts for Dashboard Creation
+**Prompt to Generate Custom Search Queries:**
+```
+"Create advanced Google search queries to find [type of data] related to 
+[industry/topic]. Include appropriate operators (site:, filetype:, date ranges).
+Provide 5 different query variations."
+```
+
+### B. Master Prompt Library for Gemini/ChatGPT Data Analysis
+
+**1. Data Cleaning Prompts (No Code Required)**
 
 ```
-"Create an HTML dashboard with Chart.js for this data: [paste data]"
-"Design a responsive analytics page with these visualizations: [list]"
-"Generate interactive filters for this dashboard"
-"Add drill-down functionality to [specific chart]"
-"Improve this dashboard's visual design [paste HTML]"
+BASIC CLEANING:
+"I have a CSV with [describe issues: missing values, inconsistent formats, etc.]. 
+Provide Google Sheets formulas to clean this data. Explain each formula in simple terms."
+
+ADVANCED CLEANING:
+"Act as a data quality expert. Review this dataset: [paste first 20 rows]. 
+Identify all data quality issues. For each issue, provide:
+1. The problem
+2. Business impact
+3. Google Sheets formula to fix it
+4. Step-by-step instructions
+
+No coding - only spreadsheet formulas."
+
+DATE STANDARDIZATION:
+"This column has dates in multiple formats (MM/DD/YYYY, DD-MM-YY, Month D, Year). 
+Give me a Google Sheets formula to convert all to YYYY-MM-DD format."
+
+CURRENCY CLEANING:
+"Some cells have '$1,234.56', others '1234.56', some '1,234'. Create a formula 
+to extract just the number value."
+```
+
+**2. Analysis Prompts (AI Does the Heavy Lifting)**
+
+```
+EXPLORATORY ANALYSIS:
+"Analyze this dataset and provide:
+- Summary statistics (mean, median, mode, range) for numeric columns
+- Distribution of categorical variables
+- Potential outliers or anomalies
+- 5 interesting patterns you notice
+- 3 business questions this data could answer
+
+Present in a format I can copy-paste into a report."
+
+COMPARATIVE ANALYSIS:
+"Compare [Group A] vs [Group B] across [metrics]. Calculate:
+- Percentage difference
+- Statistical significance (explain p-value simply)
+- Business interpretation
+- Visualization recommendation
+
+Use only Google Sheets functions."
+
+TREND ANALYSIS:
+"This is time-series data for [metric] over [period]. 
+1. Calculate moving average (7-day, 30-day)
+2. Identify upward/downward trends
+3. Detect seasonality
+4. Forecast next 3 months (simple method)
+
+Provide formulas I can copy into Google Sheets."
+
+SEGMENTATION:
+"Segment these customers into 4 groups based on [criteria]. 
+For each segment provide:
+- Defining characteristics
+- Size (% of total)
+- Business value
+- Marketing strategy recommendation
+
+Use Google Sheets formulas for segmentation logic."
+```
+
+**3. Insight Generation Prompts**
+
+```
+BUSINESS INSIGHTS:
+"Act as a management consultant. Given this data: [describe or paste], 
+generate 5 strategic insights following this format:
+
+Insight: [One sentence summary]
+Evidence: [Data supporting this]
+So What?: [Business implication]
+Action: [Recommended next step]
+ROI: [Estimated impact]
+
+Make insights relevant to [your industry/role]."
+
+COMPETITIVE ANALYSIS:
+"I have data on my company vs 3 competitors for [metrics]. 
+Analyze:
+- Where we lead/lag
+- Gaps and opportunities  
+- Threat assessment
+- Strategic recommendations
+
+Present as an executive briefing."
+
+ROOT CAUSE ANALYSIS:
+"[Metric] decreased by [X]% in [period]. Help me investigate:
+1. What other metrics changed at the same time?
+2. What external factors could cause this?
+3. How to test each hypothesis with data we have?
+4. Priority order for investigation
+
+Provide a structured root cause analysis framework."
+```
+
+### C. Ultimate Dashboard Creation Prompts for Claude/ChatGPT
+
+**1. Complete Dashboard Generation**
+
+```
+COMPREHENSIVE DASHBOARD PROMPT:
+
+"Create a professional, fully-functional HTML dashboard with the following specs:
+
+BUSINESS CONTEXT:
+- Purpose: [Executive review / Operational monitoring / Sales tracking]
+- Audience: [C-suite / Team leads / Sales reps]
+- Update frequency: [Real-time / Daily / Weekly]
+
+DATA:
+[Paste your data or describe it]
+
+VISUALIZATIONS (specify exactly):
+1. [Chart type] showing [what] - Chart config: [colors, size, labels]
+2. [Chart type] showing [what] - Interactive: [filters, drill-down]
+3. KPI cards at top: [Metric 1], [Metric 2], [Metric 3], [Metric 4]
+4. [Additional charts]
+
+DESIGN SPECIFICATIONS:
+- Color palette: [Primary color], [Secondary color], [Accent color]
+- Typography: [Modern san-serif / Professional serif / Minimalist]
+- Layout: [Single page scroll / Tabbed sections / Sidebar navigation]
+- Branding: [Company name/logo placeholder]
+
+FUNCTIONALITY:
+- Date range selector: [Yes/No]
+- Export options: [PDF, Excel, PNG]
+- Filters: [List dynamic filters needed]
+- Responsive: Mobile-friendly? [Yes]
+
+TECHNICAL REQUIREMENTS:
+- Single HTML file (all CSS/JS inline or CDN)
+- Chart library: Chart.js (preferred) or alternatives
+- No backend needed - data embedded in HTML
+- Works offline after initial load
+
+DELIVERABLES:
+1. Complete HTML code (copy-paste ready)
+2. Comments explaining each section
+3. Instructions to customize data
+4. How to host/share the dashboard
+
+MAKE IT: Professional, interactive, and impressive enough for client presentations."
+```
+
+**2. Iterative Refinement Prompts**
+
+```
+STYLE UPDATES:
+"Update this dashboard: [paste HTML or describe current state]
+Changes needed:
+- Color scheme: Switch to [colors]
+- Font size: Increase by 20% for readability
+- Spacing: More whitespace between cards
+- Animations: Add subtle fade-in when loading"
+
+FUNCTIONALITY ADDITIONS:
+"Add these features to the existing dashboard:
+1. Search box to filter data by [field]
+2. Toggle between chart types (bar ↔ line)
+3. Click on chart to show detailed table
+4. Dark mode switch (preserve user choice)
+5. Loading spinner while data processes"
+
+DATA UPDATES:
+"I need to change the data in this dashboard. Current data structure: [describe].
+New data structure: [describe]. Update all charts to work with new format. 
+Provide updated HTML."
+
+EXPORT FEATURES:
+"Add these export options:
+- 'Export to PDF' button (using jsPDF library)
+- 'Download as Excel' (use SheetJS library)  
+- 'Share link' that copies dashboard URL
+- 'Email report' button with mailto: link
+
+Implement using CDN libraries, no npm/build process."
+```
+
+### D. Prompt Templates for Common Business Scenarios
+
+**Sales Analysis:**
+```
+"Analyze this sales data: [paste data]
+Create:
+1. Sales performance dashboard (HTML)
+2. Top/bottom performers identification
+3. Trend analysis with forecasts
+4. Geographic breakdown
+5. Product mix analysis
+6. Executive summary with recommendations
+
+Deliver: Dashboard file + insights document."
+```
+
+**Marketing Campaign Analysis:**
+```
+"I have campaign data: impressions, clicks, conversions, spend.
+Provide:
+1. ROI calculation by channel
+2. Funnel analysis (visualization)
+3. Cohort performance comparison
+4. Attribution modeling (simple approach)
+5. Budget optimization recommendations
+
+Use Google Sheets formulas + create HTML dashboard."
+```
+
+**Customer Analytics:**
+```
+"Customer data: purchase history, demographics, engagement.
+Analyze:
+1. Customer segmentation (RFM or similar)
+2. Churn prediction indicators
+3. Lifetime value calculation
+4. Retention cohort analysis
+5. Next best action recommendations
+
+Output: Interactive dashboard + strategic brief."
+```
+
+**Financial Reporting:**
+```
+"Financial data: revenue, costs, profits by month/product/region.
+Create:
+1. P&L dashboard with drill-down capability
+2. Variance analysis (actual vs budget)
+3. Waterfall charts for profit bridges
+4. Scenario modeling tool (interactive)
+5. KPI scorecards
+
+Make it CFO-presentation-ready."
+```
+
+### E. No-Code Tool Recommendations
+
+**Data Collection (No Programming):**
+- Google Forms → automatic spreadsheet
+- Typeform → beautiful surveys with logic jumps
+- Airtable → database-spreadsheet hybrid
+- Notion databases → collaborative data collection
+
+**Data Processing (Visual Interfaces):**
+- Google Sheets + AI formulas
+- Excel Power Query (point-and-click)
+- Airtable automations
+- Parabola.io → visual data workflows
+
+**Visualization (Drag & Drop):**
+- Power BI Desktop (free)
+- Tableau Public (free)
+- Google Looker Studio (free)
+- Flourish Studio → beautiful charts, no code
+
+**Automation (No Code Required):**
+- Zapier → connect apps, automate workflows
+- Make (Integromat) → visual automation
+- IFTTT → simple triggers
+- Airtable Automations
+
+**AI Tools (Prompt-Based Only):**
+- ChatGPT Plus → advanced analysis
+- Claude Pro → longer context, better code
+- Google Gemini → integrated with Workspace
+- Perplexity Pro → research with sources
+
+**Machine Learning (No Code):**
+- Obviously.ai → train ML models by clicking
+- Teachable Machine → visual ML training
+- MonkeyLearn → text analysis, no code
+- Levity.ai → custom AI workflows
+
+### F. Prompt Engineering Best Practices
+
+**The Perfect Prompt Structure:**
+```
+[ROLE]: Act as a [expert type]
+[CONTEXT]: Given this situation: [background]
+[TASK]: I need you to [specific request]
+[FORMAT]: Deliver as [output format]
+[CONSTRAINTS]: Requirements: [list]
+[EXAMPLES]: Like this: [show example if helpful]
+```
+
+**Example:**
+```
+[ROLE]: Act as a senior retail analytics consultant
+[CONTEXT]: Our e-commerce store has 20% cart abandonment rate
+[TASK]: Analyze checkout data and identify root causes
+[FORMAT]: Deliver as: Problem → Evidence → Impact → Solution
+[CONSTRAINTS]: Use only Google Analytics data, no customer surveys
+[EXAMPLES]: Like "High shipping cost" → "Avg cart $50, shipping $15" → "30% margin loss" → "Offer free shipping over $75"
+```
+
+**Chain-of-Thought Prompting:**
+```
+"Think step-by-step:
+1. First, identify what the data is telling us
+2. Then, consider possible explanations
+3. Next, evaluate each explanation's likelihood
+4. Finally, recommend actions based on most likely cause
+
+Show your reasoning at each step."
 ```
 
 ### D. Key Metrics Glossary
@@ -851,36 +1436,79 @@ OR             Logical OR operator
 - **LTV:** Lifetime Value of a customer
 - **NPS:** Net Promoter Score (customer loyalty metric)
 
-### E. SQL Cheat Sheet for Business Analysis
+### G. No-Code Alternatives to SQL (Get Same Results, Zero Coding)
 
-```sql
--- Basic query structure
-SELECT column1, column2, AVG(column3) as avg_value
-FROM table_name
-WHERE condition
-GROUP BY column1, column2
-HAVING avg_value > threshold
-ORDER BY column1 DESC
-LIMIT 10;
+**Instead of Writing SQL, Use These No-Code Methods:**
 
--- Common business queries
--- Top 10 customers by revenue
-SELECT customer_id, SUM(purchase_amount) as total_revenue
-FROM sales
-GROUP BY customer_id
-ORDER BY total_revenue DESC
-LIMIT 10;
+**Scenario 1: Top 10 Customers by Revenue**
 
--- Month-over-month growth
-SELECT 
-    DATE_TRUNC('month', order_date) as month,
-    SUM(revenue) as monthly_revenue,
-    LAG(SUM(revenue)) OVER (ORDER BY DATE_TRUNC('month', order_date)) as prev_month,
-    ((SUM(revenue) - LAG(SUM(revenue)) OVER (ORDER BY DATE_TRUNC('month', order_date))) 
-     / LAG(SUM(revenue)) OVER (ORDER BY DATE_TRUNC('month', order_date)) * 100) as growth_pct
-FROM orders
-GROUP BY month;
+*Traditional: Write SQL*
+❌ `SELECT customer_id, SUM(purchase_amount) FROM sales GROUP BY customer_id ORDER BY DESC LIMIT 10`
+
+*No-Code Method 1: Google Sheets*
+✅ Prompt to AI: "Give me a Google Sheets formula to find top 10 customers by total purchase amount"
+✅ AI provides: Use pivot table → Rows: Customer → Values: SUM of Purchase → Sort descending → Filter top 10
+✅ Click, drag, done. No SQL.
+
+*No-Code Method 2: Power BI*
+✅ Import CSV → Drag "Customer" to Rows → Drag "Purchase Amount" to Values → Change to "Sum" → Sort → Filter top N
+✅ Visual interface. No SQL.
+
+*No-Code Method 3: AI Prompt*
+✅ "Analyze this sales data and show me top 10 customers by revenue. Format as a table."
+✅ Paste data, get instant results. No SQL.
+
+**Scenario 2: Month-over-Month Growth Calculation**
+
+*Traditional: Complex SQL with LAG function*
+❌ (See complex SQL above)
+
+*No-Code Method 1: AI-Generated Excel Formula*
+✅ Prompt: "Create Excel formulas to calculate month-over-month growth percentage for monthly revenue data in columns A (Month) and B (Revenue)"
+✅ AI provides: `=(B3-B2)/B2*100` → Copy down
+✅ Paste formula, done.
+
+*No-Code Method 2: Power BI Time Intelligence*
+✅ Create measure: Right-click → New Measure → Type (Power BI writes it for you)
+✅ Or use Quick Measures → Time intelligence → Month-over-month growth
+✅ Drag to visual. No code.
+
+*No-Code Method 3: Google Sheets Query Function (AI-Generated)*
+✅ Prompt AI: "Write Google Sheets QUERY function to calculate monthly totals and growth"
+✅ Paste AI's formula, see results
+
+**The Pattern: Ask AI Instead of Learning SQL**
+
 ```
+NEED: Filter data where sales > $1000
+PROMPT: "Google Sheets formula to show only rows where column C > 1000"
+RESULT: =FILTER(A:C, C:C>1000)
+
+NEED: Join two datasets
+PROMPT: "How to combine two spreadsheets by matching customer ID using VLOOKUP?"
+RESULT: Step-by-step VLOOKUP tutorial
+
+NEED: Group data by category
+PROMPT: "Create pivot table in Google Sheets showing sum of sales by product category"
+RESULT: Click-by-click instructions
+```
+
+**SQL-to-No-Code Translation Guide:**
+
+| SQL Operation | No-Code Alternative | AI Prompt Template |
+|---------------|---------------------|--------------------|
+| SELECT | Choose columns | "Show me only [columns] from this data" |
+| WHERE | Filter | "Filter rows where [condition]" |
+| GROUP BY | Pivot table | "Sum/Average [value] grouped by [category]" |
+| JOIN | VLOOKUP/XLOOKUP | "Combine these sheets matching [key column]" |
+| ORDER BY | Sort | "Sort by [column] descending" |
+| HAVING | Filter pivot | "Show only groups where total > [value]" |
+| COUNT, SUM, AVG | Pivot values | "Count/Sum/Average [column] by [group]" |
+
+**Bottom Line: You don't need SQL when you have:**
+1. AI to generate formulas for you
+2. Visual tools like Power BI/Tableau
+3. Smart prompts that get results instantly
 
 ---
 
